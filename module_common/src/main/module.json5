@@ -1,0 +1,25 @@
+{
+  "module": {
+    "name": "module_common",
+    "type": "feature",
+    "description": "$string:module_desc",
+    "mainElement": "CommonAbility",
+    "deviceTypes": [
+      "phone"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "CommonAbility",
+        "srcEntry": "./ets/commonability/CommonAbility.ts",
+        "description": "$string:CommonAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:CommonAbility_label",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background"
+      }
+    ]
+  }
+}

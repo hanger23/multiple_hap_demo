@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "CommonAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "CommonAbility_label",
+      "value": "label"
+    }
+  ]
+}

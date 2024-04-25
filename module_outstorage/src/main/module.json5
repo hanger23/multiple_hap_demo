@@ -1,0 +1,27 @@
+{
+  "module": {
+    "name": "module_outstorage",
+    "type": "feature",
+    "description": "$string:module_desc",
+    "mainElement": "OutstorageAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "OutstorageAbility",
+        "srcEntry": "./ets/outstorageability/OutstorageAbility.ts",
+        "description": "$string:OutstorageAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:OutstorageAbility_label",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "visible": true        //需要配置为true，feature类型的hap才能被ide运行安装
+      }
+    ]
+  }
+}

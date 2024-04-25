@@ -1,0 +1,28 @@
+{
+  "module": {
+    "name": "module_instorage",
+    "type": "feature",
+    "srcEntry": "./ets/MyAbilityStage.ts",
+    "description": "$string:module_desc",
+    "mainElement": "InstorageAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "InstorageAbility",
+        "srcEntry": "./ets/instorageability/InstorageAbility.ts",
+        "description": "$string:InstorageAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:InstorageAbility_label",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "visible": true         //需要配置为true，feature类型的hap才能被ide运行安装
+      }
+    ]
+  }
+}

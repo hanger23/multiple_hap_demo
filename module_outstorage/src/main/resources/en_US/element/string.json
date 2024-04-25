@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "OutstorageAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "OutstorageAbility_label",
+      "value": "label"
+    }
+  ]
+}

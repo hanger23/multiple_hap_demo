@@ -22,6 +22,42 @@
           ]
         }
       ]
+    },
+    {
+      "name": "module_instorage",
+      "srcPath": "./module_instorage",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "module_outstorage",
+      "srcPath": "./module_outstorage",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "module_common",
+      "srcPath": "./module_common",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }
