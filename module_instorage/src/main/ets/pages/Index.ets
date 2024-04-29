@@ -1,6 +1,7 @@
 import router from '@ohos.router'
 import Util from '../../../../../module_common/src/main/ets/widget/Util'
 import { global_type2 } from '../../../../../module_common/src/main/ets/widget/global'
+import R from '../../../../../module_common/src/main/ets/widget/R'
 
 @Entry
 @Component
@@ -17,9 +18,13 @@ struct Index {
       Column({ space: 10 }) {
         Text(this.message)
           .fontSize(50)
-            // .fontColor($r('app.color.red1'))
-            // .fontColor($r('app.color.red')) // 无法访问公共hap的资源，暂未解决
+          // .fontColor($r('app.color.red1'))
+          // .fontColor(R.color.red) // 无法访问公共hap的资源，编译报错
           .fontWeight(FontWeight.Bold)
+
+        // Image(R.mipmap.lake)   // 无法访问公共hap的资源，编译报错
+        //   .width(100)
+        //   .height(100)
 
         Button("Index2")
           .onClick((event: ClickEvent) => {
