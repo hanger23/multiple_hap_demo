@@ -16,6 +16,12 @@ struct Index {
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
 
+        Text($r('app.string.class_name'))
+          .fontSize(25)
+
+        Text($r('app.string.class_name_2'))
+          .fontSize(25)
+
         Button("InstorageAbility")
           .onClick((event: ClickEvent) => {
             const want: Want = {

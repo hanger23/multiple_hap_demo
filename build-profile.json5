@@ -4,9 +4,23 @@
     "compileSdkVersion": 9,
     "compatibleSdkVersion": 9,
     "products": [
+      ///默认的product，不可更改名称,且必须存在
       {
         "name": "default",
         "signingConfig": "default",
+        ///如果未定义bundleName，则采用工程默认的bundleName
+        //        "bundleName": "com.example00.com"  //定义default的bundleName信息
+      },
+      {
+        //免费版product名称
+        "name": "free_product",
+        "signingConfig": "default",
+        "bundleName": "com.example.free"
+      },
+      {
+        //付费版product名称
+        "name": "paid_product",
+        "signingConfig": "default"
       }
     ]
   },
@@ -18,7 +32,23 @@
         {
           "name": "default",
           "applyToProducts": [
-            "default"
+            "default",
+          ]
+        },
+        {
+          //免费版target名称
+          "name": "free",
+          //将free target打包到 free_product、default 中
+          "applyToProducts": [
+            "default",
+            "free_product"
+          ]
+        },
+        {
+          //付费版target名称
+          "name": "paid",
+          "applyToProducts": [
+            "paid_product"
           ]
         }
       ]

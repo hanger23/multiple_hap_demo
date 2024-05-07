@@ -1,0 +1,53 @@
+/*
+distroFilter标签用于定义HAP对应的细分设备规格的分发策略，以便在应用市场进行云端分发应用包时做精准匹配。
+该标签可配置的分发策略维度包括API Version、屏幕形状、屏幕尺寸、屏幕分辨率，设备的国家与地区码。
+在进行分发时，通过deviceType与这五个属性的匹配关系，唯一确定一个用于分发到设备的HAP。
+
+apiVersion:支持的api Version范围
+screenShape:屏幕形状的支持策略
+  policy: 取值为 exclude：表示需要排除的value属性。include：表示需要包含的value属性。
+  value: 取值为circle（圆形）、rect（矩形）
+screenWindow:应用运行时窗口的分辨率支持策略。该字段仅支持对轻量级智能穿戴设备进行配置
+  policy: 取值为 exclude：表示需要排除的value属性。include：表示需要包含的value属性。
+  value: 单个字符串的取值格式为“宽 * 高”
+screenDensity:屏幕的像素密度 dpi
+  policy:取值为 exclude：表示需要排除的value属性。include：表示需要包含的value属性。
+  value:屏幕的像素密度,sdpi、mdpi、ldpi、xldpi、xxldpi、xxxldpi
+countryCode:应用需要分发的国家地区码
+  policy:取值为 exclude：表示需要排除的value属性。include：表示需要包含的value属性。
+  value:应用需要分发的国家地区码
+
+*/
+
+{
+  "distroFilter": {
+    "screenShape": {
+      "policy": "include",
+      "value": [
+        "circle",
+        "rect"
+      ]
+    },
+    "screenWindow": {
+      "policy": "include",
+      "value": [
+        "454*454",
+        "466*466"
+      ]
+    },
+    "screenDensity": {
+      "policy": "exclude",
+      "value": [
+        "ldpi",
+        "xldpi"
+      ]
+    },
+    "countryCode": { // 支持中国和香港地区分发
+      "policy": "include",
+      "value": [
+        "CN",
+        "HK"
+      ]
+    }
+  }
+}

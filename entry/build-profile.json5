@@ -5,10 +5,81 @@
   "targets": [
     {
       "name": "default",
-      "runtimeOS": "HarmonyOS"
+      //如果未定义该字段，或该字段取值为OpenHarmony，则表示该Target是一个运行在OpenHarmony设备上的HAP，不能运行在HarmonyOS设备上。
+      "runtimeOS": "HarmonyOS",
+      "config": {
+        /// 未定义deviceType，默认支持 module.json5中 deviceTypes 定义的所有设备类型
+        /// 注意此处在打包app时有坑，一个 product 下存在多个 target 时，需要能确定唯一hap,见 HAP唯一性校验逻辑
+        /// 简单来说就是这里的 deviceType 和 下面 free 的 deviceType 不能有相同的类型，如果有相同的就需要继续校验 distroFilter
+        /// distroFilter这块还有待研究！！！
+        "deviceType": [
+          "default",
+          "tablet"
+        ]
+      },
+      /// default使用了index.ets页面
+      /// 必须注释掉，安装后才有画面，这个为什么，待研究
+      //      "source": {
+      //        "pages": [
+      //          "pages/index"
+      //        ]
+      //      },
+      "resource": {
+        //定义使用的资源文件目录,该功能在API 9及以上版本的工程中生效
+        "directories": [
+          "./src/main/resources"
+        ]
+      }
     },
     {
-      "name": "ohosTest",
+      "name": "free",
+      //免费版target名称
+      "runtimeOS": "HarmonyOS",
+      "config": {
+        // 只支持 phone
+        "deviceType": [
+          "phone"
+        ]
+      },
+      /// free使用了 index.ets 和 EntryPage1.ets 页面
+      //      "source": {
+      //        "pages": [
+      //          "pages/index",
+      //          "pages/EntryPage1"
+      //        ]
+      //      },
+      "resource": {
+        //定义免费版target使用的资源文件目录
+        "directories": [
+          ///可引用多个资源文件目录,如存在同名的资源，则在构建打包过程中，排在最上面的会覆盖下面的。
+          "./src/main/resources_free",
+          "./src/main/resources"
+        ]
+      }
+    },
+    {
+      "name": "paid",
+      //付费版target名称
+      "runtimeOS": "HarmonyOS",
+      "config": {
+        // 只支持 phone
+        "deviceType": [
+          "phone"
+        ]
+      },
+      /// paid 使用了 index.ets 和 EntryPage2.ets 页面
+      "source": {
+        "pages": [
+          "pages/index",
+          "pages/EntryPage2"
+        ]
+      },
+      "resource": {
+        "directories": [
+          "./src/main/resources",
+          //          "./src/main/resources_paid"
+        ]
+      }
     }
   ]
 }

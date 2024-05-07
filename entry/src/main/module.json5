@@ -5,12 +5,20 @@
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
     "deviceTypes": [
-      "phone",
-      "tablet"
+      "default",
+      "tablet",
+      "phone"
     ],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
+    //当前Module的自定义元信息
+//    "metadata": [
+//      {
+//        "name": "ohos.module.distro",
+//        "resource": "$profile:distro_filter_config",
+//      }
+//    ],
     "abilities": [
       {
         "name": "EntryAbility",
