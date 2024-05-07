@@ -154,10 +154,8 @@
 
 
 
-## 目前存在得问题，待研究
-1. entry/build-profile.json5 中的 targets 的 source 源码集, 
-   如果定义了 source，会显示不出页面，很奇怪
-2. 关于 distroFilter 分发规则
+## 以下待研究
+1. 关于 distroFilter 分发规则
 
 
 

@@ -18,12 +18,11 @@
         ]
       },
       /// default使用了index.ets页面
-      /// 必须注释掉，安装后才有画面，这个为什么，待研究
-      //      "source": {
-      //        "pages": [
-      //          "pages/index"
-      //        ]
-      //      },
+      "source": {
+        "pages": [
+          "pages/Index"
+        ]
+      },
       "resource": {
         //定义使用的资源文件目录,该功能在API 9及以上版本的工程中生效
         "directories": [
@@ -41,13 +40,13 @@
           "phone"
         ]
       },
-      /// free使用了 index.ets 和 EntryPage1.ets 页面
-      //      "source": {
-      //        "pages": [
-      //          "pages/index",
-      //          "pages/EntryPage1"
-      //        ]
-      //      },
+      /// free使用了 Index.ets 和 EntryPage1.ets 页面
+      "source": {
+        "pages": [
+          "pages/Index",
+          "pages/EntryPage1"
+        ]
+      },
       "resource": {
         //定义免费版target使用的资源文件目录
         "directories": [
@@ -77,7 +76,7 @@
       "resource": {
         "directories": [
           "./src/main/resources",
-          //          "./src/main/resources_paid"
+          //"./src/main/resources_paid"
         ]
       }
     }

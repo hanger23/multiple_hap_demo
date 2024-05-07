@@ -6,7 +6,6 @@ import Want from '@ohos.app.ability.Want';
 @Component
 struct Index {
   @State message: string = 'EntryAbility'
-
   private context = getContext(this) as common.UIAbilityContext;
 
   build() {
@@ -46,6 +45,15 @@ struct Index {
             this.context.startAbility(want)
           })
 
+        Text("当 target 是 default 时,点击以下按钮不会跳转\n" +
+        "当 target 是 free 时,点击以下按钮会跳转\n" +
+        "这是因为在 entry/build-profile.json5 中的 targets 中 定义了 source 源码集")
+          .margin({ top: 20 })
+
+        Button("go to EntryPage1")
+          .onClick(() => {
+            router.pushUrl({ url: "pages/EntryPage1" })
+          })
 
       }
       .width('100%')
